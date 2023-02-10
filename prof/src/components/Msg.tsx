@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 type props = {
     message: string
@@ -8,9 +9,9 @@ type props = {
 const Msg = ({ message, color }: props) => {
 
     return (
-        <div className="message" style={{ backgroundColor: `${color}` }}>
+        <Link to='/plan' className="message" style={{ backgroundColor: `${color}` }}>
             {message}
-        </div>
+        </Link >
     )
 }
 
