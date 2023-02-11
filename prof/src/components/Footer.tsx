@@ -7,10 +7,10 @@ const Footer = () => {
             <div className="footer2">
                 <div>profesorulmeu © 2023</div>
                 <div>-</div>
-                <div style={{ textAlign: "center" }}>Facut in timpul sesiunii de un student politehnist din anul al doilea.</div>
+                <div style={{ textAlign: "center" }}>Facut in timpul sesiunii de niste studenti politehnisti din anul II.</div>
                 <div style={{ textAlign: "center" }}>Pentru orice sugesti sau idei, mergi pe pagina de contact</div>
                 <div>-</div>
-                <Link to='/contact'>Contact</Link>
+                <Link to='/contact' style={{ textDecoration: "none", color: "white" }}>Contact</Link>
             </div>
         </div>
     )

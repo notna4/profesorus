@@ -4,12 +4,12 @@ import { Link } from "react-router-dom"
 type props = {
     message: string
     color: string
+    dest: string
 }
 
-const Msg = ({ message, color }: props) => {
-
+const Msg = ({ message, color, dest }: props) => {
     return (
-        <Link to='/plan' className="message" style={{ backgroundColor: `${color}` }}>
+        <Link to={dest} className="message" style={{ backgroundColor: `${color}` }}>
             {message}
         </Link >
     )

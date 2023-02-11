@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Msg from '../components/Msg';
 import Navbar from '../components/Navbar';
 import ProfCard from '../components/ProfCard';
@@ -24,9 +24,9 @@ const InputSmall = ({ placeh, sub, id, setter }: propsInput) => {
       <div className="input">
         <input type="text" id={id} placeholder={placeh} onChange={onChange} />
       </div>
-      <div className="sub">
+      {/* <div className="sub">
         <h2>{sub}</h2>
-      </div>
+      </div> */}
     </div>
   )
 }
@@ -63,6 +63,11 @@ const Tags = ({ tag, tags }: props) => {
 }
 
 function App() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   let tags: any = new Set<string>();
 
   const [uni, setUni] = useState<string>("Academia de Studii Economice (ASE)");
@@ -72,15 +77,18 @@ function App() {
   const [exper, setExper] = useState<string>("Citeste de pe slide-uri si nu prea este interesat de materie. Mai bine sa mergeti la cursuri ca mai va spune ce poate pica la examene. Cursurile si laboratoarele nu au nimic in comun.");
 
   return (
+
     <div className="App">
+
       <span className="dot"></span>
       <span className="dot2"></span>
       <Navbar />
-      <Msg message="Site-ul este in lucru, afla mai multe aici ->" color="#111010" />
+      <Msg dest='/plan' message="Site-ul este in lucru, afla mai multe aici ->" color="#111010" />
+      {/* <Msg dest="/contact" message="Daca vrei sa ne ajuti cu ceva, scrie-ne ->" color="orange" /> */}
 
       <div className='main'>
         <div className='t1'>
-          <h1>De la studenti,<br></br> pentru studenti.</h1>
+          <h1>Despre profesori,<br></br> de la studenti.</h1>
         </div>
 
         <ProfCard tags={tags} name={nume} grade={nota} subject={materie} uni={uni} text={exper} />
@@ -112,3 +120,7 @@ function App() {
 }
 
 export default App;
+function componentDidMount() {
+  throw new Error('Function not implemented.');
+}
+
