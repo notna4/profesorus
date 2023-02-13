@@ -6,10 +6,13 @@ html, body {
   background-color: #1C1C1C;
   color: white;
   font-family: 'Inter', sans-serif;
+  user-select: none;
+  /* overflow-x: hidden; */
 }
 
 .App {
   /* background-color: yellow; */
+  position: static;
   width: 100%;
   height: 100%;
   display: flex;
@@ -19,21 +22,57 @@ html, body {
 }
 
 .dot {
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: 10px;
+  right: 0px;
   z-index: 0;
-  height: 600px;
+  height: 100px;
   width: 150px;
   transform: rotate(25deg);
-  background-color: rgba(134, 134, 135, 0.196);
+  background-color: rgb(231, 231, 236);
   border-radius: 50px;
   display: inline-block;
   filter: blur(100px);
+  -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
 }
 
 .dot2 {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  top: 900px;
+  right: 200px;
+  /* left: -50%; */
+  /* transform: translate(100px, -100px); */
+  z-index: 0;
+  height: 200px;
+  width: 150px;
+  transform: rotate(25deg);
+  background-color: rgba(226, 210, 210, 0.432);
+  border-radius: 50px;
+  display: inline-block;
+  filter: blur(100px);
+  -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
+}
+
+.dot3 {
+  position: relative;
+  top: 1300px;
+  right: 000px;
+  /* left: -50%; */
+  /* transform: translate(100px, -100px); */
   z-index: 0;
   height: 100px;
   width: 150px;
@@ -42,6 +81,14 @@ html, body {
   border-radius: 50px;
   display: inline-block;
   filter: blur(100px);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
 }
 
 .AppPlan {
@@ -65,6 +112,14 @@ html, body {
   filter: blur(100px);
   border-radius: 50px;
   display: inline-block;
+  -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
 }
 
 .dot2Plan {
@@ -78,6 +133,14 @@ html, body {
   border-radius: 50px;
   filter: blur(100px);
   display: inline-block;
+  -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
 }
 
 .nav {
@@ -133,7 +196,7 @@ html, body {
 .main {
   /* background-color: #324415; */
   width: 100%; 
-  margin-top: 100px;
+  margin-top: -300px;
   padding-bottom: 100px;
   z-index: 50;
   height: 100vh;
@@ -147,7 +210,7 @@ html, body {
 .mainPlan {
   /* background-color: #324415; */
   width: 100%;
-  margin-top: 100px;
+  margin-top: 10px;
   padding-bottom: 160px;
   z-index: 50;
   height: 100vh;
@@ -230,6 +293,22 @@ input {
   padding: 2px;
 }
 
+textarea {
+  resize: none;
+  font-family: Inter;
+  min-height: 20px;
+  max-height: 300px;
+  width: 100%;
+  text-decoration: none;
+  border: none;
+  font-size: medium;
+  background-color: #1d1d1d;
+  outline: none;
+  color: white;
+  padding: 2px;
+  transition: .2s all;
+}
+
 h2 {
   font-weight: 500;
   color: #434343;
@@ -271,8 +350,8 @@ button:hover {
     -moz-box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
     box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
   background-color: #161515;
-  max-width: 350px;
-  min-width: 300px;
+  max-width: 330px;
+  min-width: 310px;
   height: fit-content;
   margin-bottom: 20px;
   margin-left: 15px;
@@ -283,6 +362,7 @@ button:hover {
   flex-direction: column;
   border: 1px solid #393535;
   gap: 5px;
+  transition: .2s all;
 }
 
 .prof-card-upper {
@@ -294,6 +374,7 @@ button:hover {
 .prof-card-name {
   font-weight: 700;
   margin-right: 10px;
+  white-space: nowrap;
 }
 
 .prof-card-grade {
@@ -316,14 +397,17 @@ button:hover {
   font-size: small;
   padding: 5px;
   padding-right: 10px;
+  white-space: nowrap;
 }
 
 .prof-card-sub-upper {
   font-size: small;
+  white-space: nowrap;
 }
 
 .prof-card-bottom {
   font-size: medium;
+  transition: .2s all;
 }
 
 .footer {
@@ -350,4 +434,130 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.two-cards {
+  position: sticky;
+  overflow-x: hidden;
+  min-width: fit-content;
+  min-height: 420px;
+  /* width: fit-content;
+  height: fit-content; */
+  margin-top: 20px;
+  border-radius: 15px;
+  padding-top: 20px;
+  background-color: #161515;
+  /* border: 1px solid #393535; */
+}
+
+.card1 {
+  width: 100%;
+  z-index: 50;
+  top: 0px;
+  right: -50%;
+  transform: translate(30%, 0%);
+}
+
+.card2 {
+  width: 100%;
+  z-index: 51;
+  top: 0px;
+  left: 50%;
+  transform: translate(-15%, -50%);
+}
+
+.cards-text {
+  margin-top: -80px;
+  padding-left: 20px;
+  font-size: small;
+}
+
+.stat-cards {
+  /* border: 1px solid #393535; */
+  min-width: 350px;
+  /* width: fit-content;
+  height: fit-content; */
+  margin-top: 20px;
+  border-radius: 15px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #161515;
+}
+
+.stats-main-text {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.stats {
+  width: 100%;
+}
+
+.stat {
+  font-size: small;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+  transition: .2s all;
+  border: 1px solid #393535;
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.stat-prof {
+  margin: 30px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border: 1px solid #393535;
+  border-radius: 15px;
+  padding: 5px;
+  padding-left:25px;
+  -webkit-box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
+    box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
+}
+
+.end {
+  margin-top: 30px;
+  max-width: 330px;
+  min-width: 330px;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.end-text {
+  font-weight: 500;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inscriere {
+  font-weight: 600;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #161515;
+  background-color: white;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 15px;
+  transition: .2s all;
+  -webkit-box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
+    box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
+}
+
+.inscriere:hover {
+  background-color: #161515;
+  border: 1px solid #393535;
+  color: white;
 }

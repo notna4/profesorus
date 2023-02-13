@@ -14,7 +14,7 @@ function Plan() {
             <span className="dotPlan"></span>
             <span className="dot2Plan"></span>
             <Navbar />
-            <Msg dest="/contact" message="Daca vrei sa ne ajuti cu ceva, scrie-ne ->" color="orange" />
+            {/* <Msg dest="/contact" message="Daca vrei sa ne ajuti cu ceva, scrie-ne ->" color="orange" /> */}
 
             <div className="mainPlan">
                 <div className="t1Plan">

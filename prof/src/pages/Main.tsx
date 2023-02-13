@@ -11,7 +11,7 @@ function Main() {
             <Routes>
                 <Route path='/' element={<App />} />
                 <Route path='/plan' element={<Plan />} />
-                <Route path='/contact' element={<Contact />} />
+                {/* <Route path='/contact' element={<Contact />} /> */}
             </Routes>
         </Router>
     );

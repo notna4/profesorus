@@ -10,9 +10,6 @@ type props = {
 }
 
 const ProfCard = ({ name, grade, subject, uni, tags, text }: props) => {
-    console.log("H");
-    console.log(tags);
-
     return (
         <div className="prof-card-div">
             <div className="prof-card-upper">
