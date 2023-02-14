@@ -8,6 +8,7 @@ html, body {
   font-family: 'Inter', sans-serif;
   user-select: none;
   /* overflow-x: hidden; */
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -22,14 +23,14 @@ html, body {
 }
 
 .dot {
-  position: relative;
+  position: absolute;
   top: 10px;
-  right: 0px;
+  right: 50%;
   z-index: 0;
   height: 100px;
   width: 150px;
   transform: rotate(25deg);
-  background-color: rgb(231, 231, 236);
+  background-color: rgb(255, 175, 94);
   border-radius: 50px;
   display: inline-block;
   filter: blur(100px);
@@ -44,16 +45,16 @@ html, body {
 }
 
 .dot2 {
-  position: relative;
-  top: 900px;
-  right: 200px;
+  position: absolute;
+  top: 1200px;
+  left: 50%;
   /* left: -50%; */
   /* transform: translate(100px, -100px); */
   z-index: 0;
   height: 200px;
   width: 150px;
   transform: rotate(25deg);
-  background-color: rgba(226, 210, 210, 0.432);
+  background-color: rgba(188, 252, 124, 0.432);
   border-radius: 50px;
   display: inline-block;
   filter: blur(100px);
@@ -67,17 +68,89 @@ html, body {
     transform: translateZ(0);
 }
 
+.dot2b {
+  position: absolute;
+  top: 1500px;
+  right: 50%;
+  /* left: -50%; */
+  /* transform: translate(100px, -100px); */
+  z-index: 0;
+  height: 200px;
+  width: 150px;
+  transform: rotate(25deg);
+  background-color: rgba(34, 53, 218, 0.432);
+  border-radius: 50px;
+  display: inline-block;
+  filter: blur(100px);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
+}
+
 .dot3 {
-  position: relative;
-  top: 1300px;
-  right: 000px;
+  position: absolute;
+  bottom: 0px;
+  right: 50%;
   /* left: -50%; */
   /* transform: translate(100px, -100px); */
   z-index: 0;
   height: 100px;
   width: 150px;
   transform: rotate(25deg);
-  background-color: rgba(199, 199, 199, 0.709);
+  background-color: rgba(123, 17, 244, 0.709);
+  border-radius: 50px;
+  display: inline-block;
+  filter: blur(100px);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
+}
+
+.dot4 {
+  position: absolute;
+  top: 2100px;
+  right: 50%;
+  /* left: -50%; */
+  /* transform: translate(100px, -100px); */
+  z-index: 0;
+  height: 100px;
+  width: 250px;
+  transform: rotate(25deg);
+  background-color: rgba(137, 71, 244, 0.709);
+  border-radius: 50px;
+  display: inline-block;
+  filter: blur(100px);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
+}
+
+.dot5 {
+  position: absolute;
+  top: 2600px;
+  right: 50%;
+  /* left: -50%; */
+  /* transform: translate(100px, -100px); */
+  z-index: 0;
+  height: 100px;
+  width: 250px;
+  transform: rotate(25deg);
+  background-color: rgba(235, 24, 123, 0.709);
   border-radius: 50px;
   display: inline-block;
   filter: blur(100px);
@@ -147,8 +220,9 @@ html, body {
   position: fixed;
   top: 0;
   z-index: 200;
-  background-color: #1C1C1C;
-  /* backdrop-filter: blur(150px); */
+  /* background-color: #1C1C1C; */
+  background-color: #1c1c1ca5;
+  backdrop-filter: blur(20px);
   width: 100vw;
   height: 60px;
   display: flex;
@@ -196,7 +270,7 @@ html, body {
 .main {
   /* background-color: #324415; */
   width: 100%; 
-  margin-top: -300px;
+  margin-top: 100px;
   padding-bottom: 100px;
   z-index: 50;
   height: 100vh;
@@ -210,7 +284,7 @@ html, body {
 .mainPlan {
   /* background-color: #324415; */
   width: 100%;
-  margin-top: 10px;
+  margin-top: 70px;
   padding-bottom: 160px;
   z-index: 50;
   height: 100vh;
@@ -222,9 +296,16 @@ html, body {
 }
 
 .t1 {
-  /* background-color: #1c1c1c00; */
-  padding-top: 10px;
+  width: 350px;
+  /* padding-top: 200px; */
   font-size: large;
+}
+
+.t1b {
+  width: 300px;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .t1Plan {
@@ -362,7 +443,7 @@ button:hover {
   flex-direction: column;
   border: 1px solid #393535;
   gap: 5px;
-  transition: .2s all;
+  transition: .4s all;
 }
 
 .prof-card-upper {
@@ -438,7 +519,7 @@ button:hover {
 
 .two-cards {
   position: sticky;
-  overflow-x: hidden;
+  overflow: hidden;
   min-width: fit-content;
   min-height: 420px;
   /* width: fit-content;
@@ -446,7 +527,8 @@ button:hover {
   margin-top: 20px;
   border-radius: 15px;
   padding-top: 20px;
-  background-color: #161515;
+  /* background-color: #161515; */
+  background-color: #0c0a12;
   /* border: 1px solid #393535; */
 }
 
@@ -482,7 +564,8 @@ button:hover {
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #161515;
+  /* background-color: #161515; */
+  background-color: #0c0a12;
 }
 
 .stats-main-text {
@@ -502,17 +585,23 @@ button:hover {
   justify-content: space-between;
   margin: 20px;
   transition: .2s all;
-  border: 1px solid #393535;
+  /* border: 1px solid #393535; */
   border-radius: 15px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .stat-prof {
-  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px;
   margin-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+  color: white;
   border: 1px solid #393535;
+  background-color: #161515;
   border-radius: 15px;
   padding: 5px;
   padding-left:25px;
