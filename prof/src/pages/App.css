@@ -367,7 +367,7 @@ input {
   width: 100%;
   text-decoration: none;
   border: none;
-  font-size: medium;
+  font-size: 17px;
   background-color: #1d1d1d;
   outline: none;
   color: white;
@@ -426,13 +426,45 @@ button:hover {
   background-color: rgb(0, 0, 0);
 }
 
+.esc {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 10px;
+}
+
+.error {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  color: red;
+  font-weight: 800;
+  z-index: 300;
+  max-width: 330px;
+  min-width: 310px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #161515;
+  border: 1px solid rgb(112, 20, 20);
+  margin-bottom: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
+  /* -webkit-box-shadow: 10px 10px 80px rgb(137, 8, 8);
+    -moz-box-shadow: 10px 10px 80px rgb(137, 8, 8);
+    box-shadow: 10px 10px 80px  rgb(137, 8, 8); */
+  transition: .4s all;
+}
+
 .prof-card-div {
   -webkit-box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
     -moz-box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
     box-shadow: 10px 10px 80px -31px rgba(0, 0, 0, 0.65);
   background-color: #161515;
+  border: 1px solid #393535;
   max-width: 330px;
-  min-width: 310px;
+  min-width: 330px;
   height: fit-content;
   margin-bottom: 20px;
   margin-left: 15px;
@@ -441,7 +473,6 @@ button:hover {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  border: 1px solid #393535;
   gap: 5px;
   transition: .4s all;
 }
@@ -520,8 +551,9 @@ button:hover {
 .two-cards {
   position: sticky;
   overflow: hidden;
-  min-width: fit-content;
-  min-height: 420px;
+  max-width: 100%;
+  min-height: 500px;
+  max-height: 1000px;
   /* width: fit-content;
   height: fit-content; */
   margin-top: 20px;
@@ -549,9 +581,55 @@ button:hover {
 }
 
 .cards-text {
-  margin-top: -80px;
+  margin-top: -40px;
   padding-left: 20px;
   font-size: small;
+}
+
+.pareriDiv {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+  background-color: #1615157c;
+  border: 1px solid #393535;
+}
+
+
+.pareriUpper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pareri-text {
+  font-size: small;
+  font-weight: 600;
+}
+
+.progress {
+  width: 100%;
+  height: 15px;
+  /* background-color: #F5F5F5; */
+  background-color: #324415;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  transition: width 0.5s linear;
+  height: 100%;
+  /* background-color: #9aa949; */
+  background-color: #9ED744;
+    /* color: #9ED744; */
+  border-radius: 10px;
+  display: flex;
+  align-self: center;
 }
 
 .stat-cards {
